@@ -1,0 +1,57 @@
+@* @page *@
+@using mvc_dotnet.DBContext;
+@model EmployeeSalarysModel
+
+@* @model HomeController *@
+@{
+
+  ViewData["Title"] = "Edit Employee details";
+  
+}
+
+<style>
+input[type=submit] {
+  width: 100%;
+  background-color: black;
+  
+  cursor: pointer;
+}
+input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+</style>
+<div>
+  @{
+    <h1>@ViewData["Title"]</h1> <br>
+<form method="post" enctype="multipart/form-data" asp-controller="Home" asp-action="See_and_add">
+	@* <div>
+			
+		<label>Employee Id</label><br>
+				<input  type="text" disabled required id="id" name="id" value=@Model.Id.ToString()><br>
+	</div> *@
+	<div>
+			
+		<label>Employee name</label><br>
+				<input  type="text" required id="Name" name="Name" value=@Model.Name.ToString()><br>
+	</div>
+  <div>
+			
+		<label>Employee post</label><br>
+				<input  type="text" required id="Post" name="Post" value=@Model.Post.ToString()><br>
+	
+	</div>
+	
+  <div>
+			
+		<label>Employee salary</label><br>
+				<input  type="text" required id="Salary" name="Salary" value=@Model.Salary.ToString()><br>
+	</div>
+	<div>
+	<input type="submit" style="color: white;" value="Update"/><br>
+	</div>
+	<h3 style="color: red;">@ViewBag.Nam</h3>
+</form>
+}

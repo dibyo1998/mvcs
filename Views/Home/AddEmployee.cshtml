@@ -1,0 +1,51 @@
+﻿@* @page *@
+@using mvc_dotnet.DBContext;
+@model EmployeeSalarysModel
+
+@* @model HomeController *@
+@{
+
+  ViewData["Title"] = "Fill Employee details";
+}
+<style>
+input[type=submit] {
+  width: 100%;
+  background-color: black;
+  
+  cursor: pointer;
+}
+input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+</style>
+<div>
+  <h1>@ViewData["Title"]</h1> <br>
+<form method="post" enctype="multipart/form-data" asp-controller="Home" asp-action="AddEmployee">
+	<div>
+			
+		<label>Employee Id</label><br>
+				<input  type="text" required id="Id" name="Id" placeholder="Enter id(is unique for every employee)"><br>
+	</div>
+	<div>
+			
+		<label>Employee name</label><br>
+				<input  type="text" required id="Name" name="Name" placeholder="Enter name"><br>
+	</div>
+  <div>
+			
+		<label>Employee post</label><br>
+				<input  type="text" required id="Post" name="Post" placeholder="Enter post"><br>
+	</div>
+  <div>
+			
+		<label>Employee salary</label><br>
+				<input  type="text" required id="Salary" name="Salary" placeholder="Enter salary"><br>
+	</div>
+	<div>
+	<input type="submit" style="color: white;" value="Add"/><br>
+	</div>
+	<h3 style="color: red;">@ViewBag.Name</h3>
+</form>
